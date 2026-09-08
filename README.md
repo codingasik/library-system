@@ -1,58 +1,317 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📚 Library System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Library System** adalah aplikasi manajemen perpustakaan sederhana yang dibuat menggunakan **Laravel 13** sebagai project latihan dari Ebook **30 Hari Belajar Laravel** oleh CodingAsik Academy.
 
-## About Laravel
+Project ini dibuat untuk membantu pembaca mempraktikkan konsep Laravel secara langsung, mulai dari routing, migration, model, relationship, validation, CRUD, hingga pembuatan antarmuka menggunakan Livewire dan Tailwind CSS.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ✨ Fitur
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Beberapa fitur yang tersedia di dalam aplikasi:
 
-## Learning Laravel
+* 📚 **Manajemen Buku**
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+  * Menampilkan daftar buku
+  * Menambahkan buku
+  * Mengubah data buku
+  * Menghapus buku
+  * Upload cover buku
+  * Pencarian buku
+  * Sorting data buku
+  * Pagination
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+* 🗂️ **Manajemen Kategori**
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+  * Menampilkan kategori buku
+  * Menambahkan kategori
+  * Mengubah kategori
+  * Menghapus kategori
 
-## Agentic Development
+* 🔎 **Pencarian & Filter**
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+  * Pencarian berdasarkan judul atau penulis
+  * Filter berdasarkan kategori
+  * Sorting berdasarkan kolom tertentu
+
+* 📦 **Manajemen Stok**
+
+  * Menampilkan jumlah stok buku
+  * Mengelola perubahan stok
+  * Mencatat aktivitas stok
+
+* 🎨 **Responsive UI**
+
+  * Menggunakan Tailwind CSS
+  * Responsive pada berbagai ukuran layar
+  * Menggunakan reusable UI components
+
+---
+
+## 🛠️ Teknologi
+
+Project ini dibuat menggunakan:
+
+| Teknologi    | Versi |
+| ------------ | ----- |
+| Laravel      | 13    |
+| PHP          | 8.3+  |
+| Livewire     | 4     |
+| Tailwind CSS | 4     |
+| Vite         | -     |
+| MySQL        | -     |
+| Blade        | -     |
+| JavaScript   | -     |
+
+---
+
+## 📋 Requirements
+
+Pastikan komputer kamu sudah memiliki:
+
+* **PHP 8.3 atau lebih baru**
+* **Composer**
+* **Node.js & NPM**
+* **MySQL / MariaDB**
+* **Git**
+
+Untuk memastikan versi yang terpasang:
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+php -v
+composer -V
+node -v
+npm -v
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+---
 
-## Contributing
+## 🚀 Cara Install
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 1. Clone Repository
 
-## Code of Conduct
+Clone repository ke komputer:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+git clone https://github.com/username/library-system.git
+```
 
-## Security Vulnerabilities
+Masuk ke folder project:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+cd library-system
+```
 
-## License
+> Ganti URL repository di atas dengan URL repository Library System kamu.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+### 2. Install Dependency PHP
+
+Jalankan:
+
+```bash
+composer install
+```
+
+---
+
+### 3. Install Dependency JavaScript
+
+Jalankan:
+
+```bash
+npm install
+```
+
+---
+
+### 4. Buat File Environment
+
+Copy `.env.example` menjadi `.env`.
+
+```bash
+cp .env.example .env
+```
+
+Jika menggunakan Windows dan perintah tersebut tidak tersedia, kamu bisa menyalin `.env.example` secara manual dan mengubah namanya menjadi `.env`.
+
+---
+
+### 5. Generate Application Key
+
+Jalankan:
+
+```bash
+php artisan key:generate
+```
+
+---
+
+### 6. Konfigurasi Database
+
+Buka file `.env`, kemudian sesuaikan konfigurasi database:
+
+```env
+DB_DATABASE=library_system
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Buat database dengan nama:
+
+```text
+library_system
+```
+
+Sesuaikan `DB_USERNAME` dan `DB_PASSWORD` dengan konfigurasi MySQL di komputer kamu.
+
+---
+
+### 7. Jalankan Migration & Seeder
+
+Jalankan:
+
+```bash
+php artisan migrate --seed
+```
+
+Perintah tersebut akan membuat tabel database sekaligus menjalankan seeder yang tersedia.
+
+---
+
+### 8. Buat Storage Link
+
+Karena aplikasi menggunakan upload cover buku, buat symbolic link storage dengan:
+
+```bash
+php artisan storage:link
+```
+
+---
+
+### 9. Jalankan Development Server
+
+Jalankan Laravel:
+
+```bash
+php artisan serve
+```
+
+Kemudian buka:
+
+```text
+http://127.0.0.1:8000
+```
+
+---
+
+### 10. Jalankan Vite
+
+Buka terminal baru dan jalankan:
+
+```bash
+npm run dev
+```
+
+Biarkan proses Vite tetap berjalan selama proses development.
+
+---
+
+## 📁 Struktur Project
+
+Struktur project mengikuti struktur standar Laravel dengan beberapa tambahan untuk Livewire:
+
+```text
+library-system/
+├── app/
+│   ├── Livewire/
+│   ├── Models/
+│   └── ...
+├── database/
+│   ├── migrations/
+│   └── seeders/
+├── resources/
+│   ├── css/
+│   ├── js/
+│   └── views/
+│       ├── components/
+│       ├── layouts/
+│       └── pages/
+├── routes/
+│   └── web.php
+├── public/
+├── storage/
+├── .env.example
+├── composer.json
+├── package.json
+└── README.md
+```
+
+---
+
+## 🎯 Tujuan Project
+
+Project ini dibuat sebagai **project latihan**, bukan sebagai aplikasi perpustakaan production-ready.
+
+Melalui project ini, kamu dapat mempraktikkan berbagai konsep penting dalam Laravel dengan membangun aplikasi nyata secara bertahap.
+
+Materi yang dipraktikkan antara lain:
+
+* Routing
+* Blade
+* Migration
+* Model & Eloquent
+* Eloquent Relationship
+* CRUD
+* Validation
+* File Upload
+* Pagination
+* Search & Filter
+* Livewire
+* Reusable Components
+* Tailwind CSS
+* Database Seeder
+
+Project ini merupakan companion project untuk Ebook:
+
+> **30 Hari Belajar Laravel — CodingAsik Academy**
+
+---
+
+## 📖 Belajar Laravel
+
+Ingin mempelajari proses pembuatan project ini dari awal secara bertahap?
+
+Kunjungi:
+
+[CodingAsik Academy](https://codingasikacademy.com?utm_source=github.com/codingasik)
+
+---
+
+## 💬 Butuh Bantuan?
+
+Jika mengalami kendala saat menjalankan project atau mengikuti materi, silakan hubungi CodingAsik Academy:
+
+* 🌐 Website: [codingasikacademy.com](https://codingasikacademy.com?utm_source=github.com/codingasik)
+* 💬 WhatsApp: [WhatsApp CodingAsik Academy](https://wa.me/6285713254744?utm_source=github.com/codingasik)
+* 📸 Instagram: [@codingasik di Instagram](https://instagram.com/codingasik?utm_source=github.com/codingasik)
+* 🎵 TikTok: [@codingasik di TikTok](https://tiktok.com/@codingasik?utm_source=github.com/codingasik)
+* ▶️ YouTube: [CodingAsik di YouTube](https://youtube.com/codingasik?utm_source=github.com/codingasik)
+* 📧 Email: [codingasikacademy@gmail.com](mailto:codingasikacademy@gmail.com)
+
+---
+
+## ❤️ Support
+
+Jika project ini membantu proses belajar kamu:
+
+⭐ Berikan **Star** pada repository ini
+📖 Pelajari Ebook **30 Hari Belajar Laravel**
+📢 Bagikan project ini kepada teman yang sedang belajar Laravel
+
+---
+
+**Happy Coding! 🚀**
+
+Made with ❤️ by **CodingAsik Academy**
