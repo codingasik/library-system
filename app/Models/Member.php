@@ -33,10 +33,4 @@ class Member extends Model
   {
     return $this->hasMany(Loan::class);
   }
-
-  // Scope kueri untuk mengambil member yang aktif saja.
-  public function scopeActive($query)
-  {
-    return $query->where('is_active', true);
-  }
 }

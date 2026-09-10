@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-
+use Illuminate\Database\Eloquent\Casts\Attribute;
 class Book extends Model
 {
   use HasFactory;
@@ -43,12 +43,5 @@ class Book extends Model
   public function loans(): HasMany
   {
     return $this->hasMany(Loan::class);
-  }
-
-  // Helper untuk menghitung sisa stok yang tersedia saat ini.
-  public function availableStock(): int
-  {
-    $borrowedCount = $this->loans()->where('status', 'borrowed')->count();
-    return max(0, $this->stock - $borrowedCount);
   }
 }
