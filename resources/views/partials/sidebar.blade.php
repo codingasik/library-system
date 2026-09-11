@@ -11,37 +11,42 @@
     </div>
   </div>
 
-  {{-- Navigasi --}}
-  <nav class="flex-1 space-y-1 overflow-y-auto px-3 py-4">
+{{-- Navigasi --}}
+<nav class="flex-1 space-y-1 overflow-y-auto px-3 py-4">
 
-    @php
-      $navItems = [
-        ['icon' => 'lucide-layout-dashboard', 'label' => 'Dashboard', 'route' => 'dashboard'],
-        ['icon' => 'lucide-book',             'label' => 'Books',     'route' => 'books.index'],
-        ['icon' => 'lucide-users',            'label' => 'Members',   'route' => 'members.index'],
-        ['icon' => 'lucide-repeat',           'label' => 'Loans',     'route' => 'loans.index'],
-        ['icon' => 'lucide-tags',             'label' => 'Categories','route' => 'categories.index'],
-      ];
-    @endphp
+  @php
+    $navItems = [
+      ['icon' => 'lucide-layout-dashboard', 'label' => 'Dashboard', 'route' => 'dashboard'],
+      ['icon' => 'lucide-book',             'label' => 'Books',     'route' => 'books.index'],
+      ['icon' => 'lucide-users',            'label' => 'Members',   'route' => 'members.index'],
+      ['icon' => 'lucide-repeat',           'label' => 'Loans',     'route' => 'loans.index'],
+      ['icon' => 'lucide-tags',             'label' => 'Categories','route' => 'categories.index'],
+    ];
+  @endphp
 
-    @foreach ($navItems as $item)
-      <a
-        href="{{ route($item['route']) }}"
-        wire:navigate
-        title="{{ $item['label'] }}"
-        class="nav-link flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition-colors
-          {{ request()->routeIs($item['route'])
-            ? 'bg-indigo-600 font-semibold text-white'
-            : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
+  @foreach ($navItems as $item)
+    <a
+      href="{{ route($item['route']) }}"
+      wire:navigate
+      title="{{ $item['label'] }}"
+      class="nav-link flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition-colors
+        {{ request()->routeIs($item['route'])
+          ? 'bg-indigo-600 font-semibold text-white'
+          : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
 
-        <x-dynamic-component :component="$item['icon']" class="h-5 w-5 shrink-0" />
+      <x-dynamic-component :component="$item['icon']" class="h-5 w-5 shrink-0" />
 
-        <span class="sidebar-text whitespace-nowrap">
-          {{ $item['label'] }}
-        </span>
-      </a>
-    @endforeach
-  </nav>
+      <span class="sidebar-text whitespace-nowrap">
+        {{ $item['label'] }}
+      </span>
+    </a>
+  @endforeach
+
+{{-- Panggil tombol logout disini --}}
+  <div class="w-full border-t border-t-slate-600 pt-2 my-2">
+    <livewire:logout-button />
+  </div>
+</nav>
 
   {{-- Footer Sidebar --}}
   <div class="sidebar-footer shrink-0 border-t border-slate-800 px-5 py-4 text-xs text-slate-500">

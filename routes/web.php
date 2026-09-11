@@ -2,21 +2,27 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::livewire('/', 'pages::dashboard')->name('dashboard');
+Route::middleware('guest')->group(function () {
+    Route::livewire('/login', 'pages::auth.login')->name('login');
+});
 
-Route::livewire('/books', 'pages::books.index')
-  ->name('books.index');
+Route::middleware('auth')->group(function () {
+  Route::livewire('/', 'pages::dashboard')->name('dashboard');
 
-Route::livewire('/books/{book}', 'pages::books.show')->name('books.show');
+  Route::livewire('/books', 'pages::books.index')
+    ->name('books.index');
 
-Route::livewire('/members', 'pages::members.index')
-  ->name('members.index');
+  Route::livewire('/books/{book}', 'pages::books.show')->name('books.show');
 
-Route::livewire('/categories', 'pages::categories.index')
-  ->name('categories.index');
+  Route::livewire('/members', 'pages::members.index')
+    ->name('members.index');
 
-Route::livewire('/loans', 'pages::loans.index')
-  ->name('loans.index');
+  Route::livewire('/categories', 'pages::categories.index')
+    ->name('categories.index');
+
+  Route::livewire('/loans', 'pages::loans.index')
+    ->name('loans.index');
+});
 
 //Route::get('/', fn() => view('dashboard'))->name('dashboard');
 
